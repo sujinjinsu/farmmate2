@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Intro_farmmate</string>
+    <string name="farmmate">FARMMATE!</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="tv_diary">일지</string>
+    <string name="btn_register_diary">일지작성</string>
+    <string name="btn_plant_name">Button</string>
+</resources>
