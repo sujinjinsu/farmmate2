@@ -76,6 +76,3 @@
         app:layout_constraintVertical_bias="0.324" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>

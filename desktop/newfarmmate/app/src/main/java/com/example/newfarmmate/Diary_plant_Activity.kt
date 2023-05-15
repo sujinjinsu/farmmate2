@@ -17,7 +17,7 @@ class Diary_plant_Activity : AppCompatActivity() {
     fun settingButton(){
         val button = findViewById<Button>(R.id.register_diary)
         button.setOnClickListener {
-            val intent = Intent(this, Diary_register::class.java)
+            val intent = Intent(this, Diary_register_Activity::class.java)
             startActivity(intent)
         }
     }
