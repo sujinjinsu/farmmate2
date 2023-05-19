@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <ScrollView
+        android:id="@+id/plant_add_fragment_sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".MainActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_layout_title_cl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/home_fragment_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="팜메이트"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_fragment_weather_cl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_goneMargin="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_layout_title_cl">
+
+                <TextView
+                    android:id="@+id/home_fragment_weather_cl_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2023년 4월 10일"
+                    android:textColor="@android:color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/home_fragment_weather_cl_tempe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="온도: 18°C"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toEndOf="@id/home_fragment_weather_cl_date"
+                    app:layout_constraintTop_toBottomOf="@id/home_fragment_weather_cl_date"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/home_fragment_weather_cl_humid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="습도 : 89% "
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toStartOf="@id/home_fragment_weather_cl_tempe"
+                    app:layout_constraintTop_toBottomOf="@id/home_fragment_weather_cl_date"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="최고 : 18°C "
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toEndOf="@id/home_fragment_weather_cl_humid"
+                    app:layout_constraintTop_toBottomOf="@id/home_fragment_weather_cl_humid"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="최저 : 6°C "
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toEndOf="@id/home_fragment_weather_cl_tempe"
+                    app:layout_constraintTop_toBottomOf="@id/home_fragment_weather_cl_tempe"
+                    tools:ignore="TextSizeCheck" />
+
+                <ImageView
+                    android:layout_width="68dp"
+                    android:layout_height="49dp"
+                    android:src="@drawable/rainy"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/home_fragment_weather_cl_humid"
+                    app:layout_constraintHorizontal_bias="0.364"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.529" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/favorite_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내 식물"
+                android:paddingLeft="16dp"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_fragment_weather_cl"
+                app:layout_constraintVertical_bias="0.411" />
+
+            <LinearLayout
+                android:id="@+id/home_fragment_myplant_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/favorite_tv"
+                app:layout_constraintVertical_bias="1.0"
+                >
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_fragment_myplant_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/favorite_tv"
+                    app:layout_constraintEnd_toEndOf="@id/favorite_tv"
+                    app:layout_constraintStart_toStartOf="@id/favorite_tv"
+                    app:layout_constraintTop_toTopOf="@+id/favorite_tv" />
+
+                <TextView
+                    android:id="@+id/todo_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="오늘의 할일"
+                    android:textColor="#000000"
+                    app:layout_constraintTop_toTopOf="@id/home_fragment_myplant_rv"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="@id/home_fragment_myplant_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/home_fragment_weather_cl" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_fragment_todolist_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="@id/todo_tv"
+                    app:layout_constraintEnd_toEndOf="@id/todo_tv"
+                    app:layout_constraintStart_toStartOf="@id/favorite_tv"
+                    app:layout_constraintTop_toTopOf="@+id/favorite_tv" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+
+</FrameLayout>
