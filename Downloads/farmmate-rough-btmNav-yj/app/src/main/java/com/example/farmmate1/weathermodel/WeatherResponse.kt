@@ -26,7 +26,7 @@ fun getWeather() {
 
     val weatherApiService = retrofit.create(WeatherApiService::class.java)
 
-    val apiKey = "TF4qcEfT6ObRPZkI8XPooCNJDS39DY2HhujIugD%2BGc6NxharY00o5rb4baYR04I%2BoRwTK5wpVKjQoKf5tC9Vzw%3D%3D" // 발급받은 API 키로 대체해주세요
+    val apiKey = "" // 발급받은 API 키로 대체해주세요
     val location = "날씨를 조회할 위치 입력" // 조회할 위치 정보로 대체해주세요
 
     val call = weatherApiService.getWeatherData(apiKey, location)
